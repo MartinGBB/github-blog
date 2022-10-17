@@ -9,7 +9,18 @@ export const GlobalStyle = createGlobalStyle`
 
 :focus{
   outline: 0;
-  box-shadow: 0 0 0 2px;
+  box-shadow: 0 0 0 2px ${props => props.theme.blue};
+}
+
+input[type='text'] {
+  background: ${props => props.theme['base-input']};
+  border: 1px solid #1C2F41;
+  border-radius: 6px;
+  color: ${props => props.theme['base-text']};
+
+  &::placeholder {
+    color: ${props => props.theme['base-label']};
+  }
 }
 
 body {
