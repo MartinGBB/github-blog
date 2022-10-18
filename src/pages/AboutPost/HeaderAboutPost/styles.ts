@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-export const SummaryPostContainer = styled.div`
-  margin: -5.5rem auto;
-  max-width: 57rem;
-  width: 100%;
-  padding: 0 1.5rem;
-`
-
-export const SummaryPostContent = styled.div`
+export const HeaderPostContainer = styled.div`
   background: ${props => props.theme["base-profile"]};
   border-radius: 10px;
   padding: 2rem 2.5rem 2rem 2rem;
