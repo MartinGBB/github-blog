@@ -11,7 +11,6 @@ img {
   width: 9.25rem;
   height: 9.25rem;
   border-radius: 8px;
-  
 }
 `
 export const AboutProfile = styled.div`
@@ -22,5 +21,29 @@ export const AboutProfile = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    & a {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      color: ${props => props.theme.blue};
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 0;
+    }
+  }
+
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  div:last-child {
+    display: flex;
+    gap: 2rem;
   }
 `
