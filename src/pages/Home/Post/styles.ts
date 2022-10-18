@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PostContainer = styled.div`
   max-height: 16.25rem;
-  max-width: 416px;
+  max-width: 26rem;
   border-radius: 10px;
   background: ${props => props.theme["base-post"]};
   padding: 2rem;
@@ -26,7 +26,6 @@ export const PostContainer = styled.div`
       font-size: 0.875rem;
       color: ${props => props.theme["base-span"]};
     }
-    
   }
 
    > p {
