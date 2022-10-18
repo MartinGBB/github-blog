@@ -6,6 +6,7 @@ border-radius: 10px;
 padding: 2rem 2.5rem 2rem 2rem;
 display: flex;
 gap: 2rem;
+box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
 
 img {
   width: 9.25rem;
