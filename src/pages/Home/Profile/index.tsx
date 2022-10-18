@@ -1,13 +1,11 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
 import {
   faArrowUpRightFromSquare,
   faBuilding,
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 
-import logo from '../../../assets/Logo.svg'
 import { AboutProfile, ProfileContainer } from './styles'
 import { api } from '../../../lib/axios'
 import { useEffect, useState } from 'react'
@@ -17,7 +15,6 @@ interface UserData {
   name: string
   bio: string
   htmlUrl: string
-
   login: string
   company: string
   followers: number
