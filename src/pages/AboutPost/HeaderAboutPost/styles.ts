@@ -16,6 +16,7 @@ export const HeaderPostContainer = styled.div`
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
+      font-size: 0.75rem;
 
       &:hover {
         box-shadow: 0 2px 0 ${props => props.theme.blue};
@@ -26,6 +27,8 @@ export const HeaderPostContainer = styled.div`
   h1 {
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: ${props => props.theme["base-title"]};
   }
 
   div {

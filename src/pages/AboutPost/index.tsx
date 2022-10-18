@@ -1,3 +1,4 @@
+import { DescriptionPost } from "./DescriptionPost";
 import { HeaderAboutPost } from "./HeaderAboutPost";
 import { AboutPostContainer } from "./styles";
 
@@ -7,6 +8,7 @@ export function AboutPost() {
   return (
     <AboutPostContainer>
       <HeaderAboutPost />
+      <DescriptionPost />
     </AboutPostContainer>
   )
 }

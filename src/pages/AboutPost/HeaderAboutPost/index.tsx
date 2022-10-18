@@ -24,9 +24,9 @@ export function HeaderAboutPost() {
       <h1>JavaScript data types and data structures</h1>
 
       <div>
-        <span><FontAwesomeIcon icon={faGithub} /> cameronwll</span>
-        <span><FontAwesomeIcon icon={faCalendarDay} /> Rocketseat</span>
-        <span><FontAwesomeIcon icon={faComment} /> 32 seguidores</span>
+        <span><FontAwesomeIcon icon={faGithub} />cameronwll</span>
+        <span><FontAwesomeIcon icon={faCalendarDay} />Há 1 dia</span>
+        <span><FontAwesomeIcon icon={faComment} />5 comentários</span>
       </div>
     </HeaderPostContainer>
   )
