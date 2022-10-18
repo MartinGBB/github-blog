@@ -10,10 +10,10 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
-  const { title, date, paragraph } = post
+  const { title, date, paragraph, id } = post
 
   return (
-    <PostContainer to="/">
+    <PostContainer to={`/${id}`}>
       <header>
         <h1>{title}</h1>
         <span>{date}</span>
