@@ -34,6 +34,14 @@ export const AboutProfile = styled.div`
       font-weight: 700;
       text-decoration: none;
       line-height: 0;
+      
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:hover {
+        box-shadow: 0 2px 0 ${props => props.theme.blue};
+      }
     }
   }
 
