@@ -1,19 +1,19 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const PostContainer = styled(Link)`
   max-height: 16.25rem;
   max-width: 26rem;
   border-radius: 10px;
-  background: ${props => props.theme["base-post"]};
+  background: ${(props) => props.theme['base-post']};
   padding: 2rem;
   margin-bottom: 2rem;
   text-decoration: none;
 
   &:hover {
-    box-shadow: 0 0 0 2px ${props => props.theme["base-label"]};
+    box-shadow: 0 0 0 2px ${(props) => props.theme['base-label']};
   }
- 
+
   @media (max-width: 890px) {
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -25,25 +25,25 @@ export const PostContainer = styled(Link)`
     justify-content: space-between;
     margin-bottom: 1.125rem;
     gap: 1rem;
-    
+
     h1 {
       font-size: 1.125rem;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
       overflow: hidden;
     }
-    
+
     span {
       white-space: nowrap;
       font-size: 0.875rem;
-      color: ${props => props.theme["base-span"]};
+      color: ${(props) => props.theme['base-span']};
     }
   }
 
-   > p {
-    color: ${props => props.theme["base-text"]};
+  > p {
+    color: ${(props) => props.theme['base-text']};
     display: -webkit-box;
     -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
     overflow: hidden;
   }
 `

@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import { DefaultLayout } from "../layouts/DefaultLayout";
-import { Home } from "../pages/Home";
-import { AboutPost } from "../pages/AboutPost";
+import { Route, Routes } from 'react-router-dom'
+import { DefaultLayout } from '../layouts/DefaultLayout'
+import { Home } from '../pages/Home'
+import { AboutPost } from '../pages/AboutPost'
 
 export function Router() {
   return (

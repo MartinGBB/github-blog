@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import banner from '../../assets/Banner.svg'
 
 export const HeaderContainer = styled.div`
