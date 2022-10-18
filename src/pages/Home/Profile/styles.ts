@@ -12,6 +12,11 @@ img {
   width: 9.25rem;
   height: 9.25rem;
   border-radius: 8px;
+  margin: 0 auto;
+}
+
+@media (max-width: 615px) {
+  flex-direction: column;
 }
 `
 export const AboutProfile = styled.div`

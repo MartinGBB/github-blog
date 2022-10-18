@@ -8,8 +8,8 @@ export function Profile() {
   return (
     <ProfileContainer>
       <img src={logo} alt="" />
+  
       <AboutProfile>
-
         <div>
           <h1>Cameron Williamson</h1>
           <Link to="/">

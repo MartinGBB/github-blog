@@ -7,7 +7,13 @@ export const PostContainer = styled.div`
   background: ${props => props.theme["base-post"]};
   padding: 2rem;
   margin-bottom: 2rem;
-  
+ 
+  @media (max-width: 890px) {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -18,7 +24,6 @@ export const PostContainer = styled.div`
       font-size: 1.125rem;
       color: ${props => props.theme["base-title"]};
       overflow: hidden;
-
     }
     
     span {
