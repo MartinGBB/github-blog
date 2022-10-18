@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.div`
   margin-top: 4.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 
   header {
     display: flex;
@@ -23,6 +23,5 @@ export const FormContainer = styled.div`
   input {
     padding: 0.75rem 1rem;
     width: 100%;
-
   }
 `

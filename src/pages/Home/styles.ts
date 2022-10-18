@@ -6,3 +6,8 @@ export const HomeContainer = styled.div`
   width: 100%;
   padding: 0 1.5rem;
 `
+export const PostsContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`
