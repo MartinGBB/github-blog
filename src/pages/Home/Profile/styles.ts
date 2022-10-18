@@ -59,5 +59,15 @@ export const AboutProfile = styled.div`
   div:last-child {
     display: flex;
     gap: 2rem;
+
+    & span {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      & svg {
+        color: ${props => props.theme["base-label"]};
+      }
+    }
   }
 `

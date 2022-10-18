@@ -28,7 +28,25 @@ export const SummaryPostContent = styled.div`
         box-shadow: 0 2px 0 ${props => props.theme.blue};
       }
     }
-
   }
 
+  h1 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  div {
+    display: flex;
+    gap: 2rem;
+    
+    & span {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      & svg {
+        color: ${props => props.theme["base-label"]};
+      }
+    }
+  }
 `
