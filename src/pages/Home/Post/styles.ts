@@ -1,12 +1,18 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const PostContainer = styled.div`
+export const PostContainer = styled(Link)`
   max-height: 16.25rem;
   max-width: 26rem;
   border-radius: 10px;
   background: ${props => props.theme["base-post"]};
   padding: 2rem;
   margin-bottom: 2rem;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 0 0 2px ${props => props.theme["base-label"]};
+  }
  
   @media (max-width: 890px) {
     margin: 0 auto;
@@ -34,6 +40,7 @@ export const PostContainer = styled.div`
   }
 
    > p {
+    color: ${props => props.theme["base-text"]};
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;  

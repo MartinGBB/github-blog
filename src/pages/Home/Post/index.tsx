@@ -13,7 +13,7 @@ export function Post({ post }: PostProps) {
   const { title, date, paragraph } = post
 
   return (
-    <PostContainer>
+    <PostContainer to="/">
       <header>
         <h1>{title}</h1>
         <span>{date}</span>
