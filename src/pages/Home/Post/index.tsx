@@ -1,5 +1,6 @@
 import { formatDate } from '../../../lib/formatDate'
-import { PostContainer } from './styles'
+import { ContentBody, PostContainer } from './styles'
+import remarkGfm from 'remark-gfm'
 
 interface PostProps {
   post: {
@@ -22,7 +23,7 @@ export function Post({ post }: PostProps) {
         </time>
       </header>
 
-      <p>{body}</p>
+      <ContentBody remarkPlugins={[remarkGfm]}>{body}</ContentBody>
     </PostContainer>
   )
 }
