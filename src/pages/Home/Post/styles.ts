@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 
-export const PostContainer = styled(Link)`
+export const PostContainer = styled.div`
   max-height: 16.25rem;
   max-width: 26rem;
   border-radius: 10px;
