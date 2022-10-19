@@ -5,7 +5,7 @@ interface PostData {
   Post: { login: string }
   title: string
   body: string
-  updated_at: string
+  created_at: string
   state: string
   number: number
   comments: number

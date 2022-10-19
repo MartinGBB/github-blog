@@ -4,15 +4,14 @@ import { PostContainer } from './styles'
 interface PostProps {
   post: {
     title: string
-    updated_at: string
+    created_at: string
     body: string
     number: number
   }
 }
 
 export function Post({ post }: PostProps) {
-  const { title, updated_at: date, body, number } = post
-  console.log(formatDate(date))
+  const { title, created_at: date, body, number } = post
 
   return (
     <PostContainer to={`/${number}`}>
