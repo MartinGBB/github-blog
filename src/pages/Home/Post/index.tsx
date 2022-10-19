@@ -3,23 +3,23 @@ import { PostContainer } from './styles'
 interface PostProps {
   post: {
     title: string
-    date: string
-    paragraph: string
-    id: number
+    updated_at: string
+    body: string
+    number: number
   }
 }
 
 export function Post({ post }: PostProps) {
-  const { title, date, paragraph, id } = post
+  const { title, updated_at: date, body, number } = post
 
   return (
-    <PostContainer to={`/${id}`}>
+    <PostContainer to={`/${number}`}>
       <header>
         <h1>{title}</h1>
         <span>{date}</span>
       </header>
 
-      <p>{paragraph}</p>
+      <p>{body}</p>
     </PostContainer>
   )
 }
