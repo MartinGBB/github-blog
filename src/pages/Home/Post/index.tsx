@@ -1,3 +1,4 @@
+import { formatDate } from '../../../lib/formatDate'
 import { PostContainer } from './styles'
 
 interface PostProps {
@@ -11,6 +12,7 @@ interface PostProps {
 
 export function Post({ post }: PostProps) {
   const { title, updated_at: date, body, number } = post
+  console.log(formatDate(date))
 
   return (
     <PostContainer to={`/${number}`}>
