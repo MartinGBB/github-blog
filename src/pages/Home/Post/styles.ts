@@ -9,6 +9,7 @@ export const PostContainer = styled(Link)`
   padding: 2rem;
   margin-bottom: 2rem;
   text-decoration: none;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 0 0 2px ${(props) => props.theme['base-label']};
@@ -30,6 +31,9 @@ export const PostContainer = styled(Link)`
       font-size: 1.125rem;
       color: ${(props) => props.theme['base-title']};
       overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     span {

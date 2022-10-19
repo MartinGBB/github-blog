@@ -33,4 +33,11 @@ body, input, textarea, button {
   font: 400 1rem 'Nunito', sans-serif;
   line-height: 160%;
 }
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
 `
