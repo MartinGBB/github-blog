@@ -1,7 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+import remarkGfm from 'remark-gfm'
 import { formatDate } from '../../../lib/formatDate'
 import { ContentBody, PostContainer } from './styles'
-import remarkGfm from 'remark-gfm'
-import { useNavigate } from 'react-router-dom'
 
 interface PostProps {
   post: {
