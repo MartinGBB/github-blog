@@ -36,7 +36,7 @@ export const PostContainer = styled(Link)`
       -webkit-box-orient: vertical;
     }
 
-    span {
+    time {
       white-space: nowrap;
       font-size: 0.875rem;
       color: ${(props) => props.theme['base-span']};

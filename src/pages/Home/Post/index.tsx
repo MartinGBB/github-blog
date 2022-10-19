@@ -18,7 +18,9 @@ export function Post({ post }: PostProps) {
     <PostContainer to={`/${number}`}>
       <header>
         <h1>{title}</h1>
-        <span>{date}</span>
+        <time title={formatDate(date).publishedDateFormatted} dateTime={date}>
+          {formatDate(date).publishedDateRelativeToNow}
+        </time>
       </header>
 
       <p>{body}</p>
