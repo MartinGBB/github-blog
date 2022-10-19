@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   margin-top: 4.5rem;
   margin-bottom: 3rem;
 
