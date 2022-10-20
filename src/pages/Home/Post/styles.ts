@@ -10,6 +10,7 @@ export const PostContainer = styled.div`
   margin-bottom: 2rem;
   text-decoration: none;
   overflow: hidden;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 0 0 2px ${(props) => props.theme['base-label']};
