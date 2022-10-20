@@ -26,7 +26,7 @@ export function HeaderAboutPost({ postHeader }: PostProps) {
           VOLTAR
         </Link>
 
-        <a href={postHeader.url}>
+        <a href={postHeader.html_url}>
           VER NO GITHUB
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </a>

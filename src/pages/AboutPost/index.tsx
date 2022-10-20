@@ -11,7 +11,7 @@ export interface PostState {
   user: { login: string }
   created_at: string
   comments: string
-  url: string
+  html_url: string
   body: string
 }
 
