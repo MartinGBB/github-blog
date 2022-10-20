@@ -6,22 +6,23 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useNavigate } from 'react-router-dom'
 import { PostState } from '..'
 import { formatDate } from '../../../lib/formatDate'
 import { HeaderPostContainer } from './styles'
-
 interface PostProps {
   postHeader: PostState
 }
 
 export function HeaderAboutPost({ postHeader }: PostProps) {
+  const navigate = useNavigate()
   return (
     <HeaderPostContainer>
       <header>
-        <a href="/">
+        <span onClick={() => navigate('/')}>
           <FontAwesomeIcon icon={faChevronLeft} />
           VOLTAR
-        </a>
+        </span>
 
         <a href={postHeader.html_url}>
           VER NO GITHUB
