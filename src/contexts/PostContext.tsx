@@ -10,7 +10,7 @@ import { api } from '../lib/axios'
 import { VITE_ROPOSITORY, VITE_USER } from '../utils/envConfig'
 
 interface PostData {
-  Post: { login: string }
+  user: { login: string }
   title: string
   body: string
   created_at: string
