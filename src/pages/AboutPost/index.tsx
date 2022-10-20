@@ -34,7 +34,7 @@ export function AboutPost() {
   return (
     <AboutPostContainer>
       <HeaderAboutPost postHeader={post} />
-      <DescriptionPost postBody={post.body} />
+      <DescriptionPost body={post.body} />
     </AboutPostContainer>
   )
 }
