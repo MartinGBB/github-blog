@@ -50,4 +50,14 @@ export const ContentBody = styled(ReactMarkdown)`
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 `
