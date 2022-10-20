@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { PostState } from '..'
+import { formatDate } from '../../../lib/formatDate'
 import { HeaderPostContainer } from './styles'
 
 interface PostProps {
@@ -40,7 +41,12 @@ export function HeaderAboutPost({ postHeader }: PostProps) {
         </span>
         <span>
           <FontAwesomeIcon icon={faCalendarDay} />
-          {postHeader.created_at}
+          <time
+            title={formatDate(postHeader.created_at).publishedDateFormatted}
+            dateTime={postHeader.created_at}
+          >
+            {formatDate(postHeader.created_at).publishedDateRelativeToNow}
+          </time>
         </span>
         <span>
           <FontAwesomeIcon icon={faComment} />
