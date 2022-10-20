@@ -6,7 +6,7 @@ export function PostEmpty() {
   return (
     <PostEmptyContainer>
       <FontAwesomeIcon icon={faFile} />
-      <h3>Você ainda não tem post</h3>
+      <h3>Sem publicações para mostrar</h3>
     </PostEmptyContainer>
   )
 }
