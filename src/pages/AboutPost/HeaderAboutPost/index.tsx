@@ -19,10 +19,10 @@ export function HeaderAboutPost({ postHeader }: PostProps) {
   return (
     <HeaderPostContainer>
       <header>
-        <Link to="/">
+        <a href="/">
           <FontAwesomeIcon icon={faChevronLeft} />
           VOLTAR
-        </Link>
+        </a>
 
         <a href={postHeader.html_url}>
           VER NO GITHUB
