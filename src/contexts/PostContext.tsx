@@ -5,10 +5,12 @@ import {
   useEffect,
   useState,
 } from 'react'
+
 import { api } from '../lib/axios'
+import { VITE_ROPOSITORY, VITE_USER } from '../utils/envConfig'
 
 interface PostData {
-  Post: { login: string }
+  user: { login: string }
   title: string
   body: string
   created_at: string
@@ -16,6 +18,7 @@ interface PostData {
   number: number
   comments: number
   url: string
+  pull_request: {}
 }
 
 interface PostContextType {
@@ -29,19 +32,16 @@ interface PostProviderProps {
 
 export const PostContext = createContext({} as PostContextType)
 
-export const USER = 'MartinGBB'
-export const REPOSITORY = 'github-blog'
-
 export function PostProvider({ children }: PostProviderProps) {
   const [postList, setPostList] = useState<PostData[]>([])
 
   const fetchPost = useCallback(async (query?: string) => {
     const newQuery = query || '%20'
-    const ENDPOINT = `search/issues?q=${newQuery}%20repo:${USER}/${REPOSITORY}`
+    const ENDPOINT = `search/issues?q=${newQuery}%20repo:${VITE_USER}/${VITE_ROPOSITORY}`
     const response = await api.get(ENDPOINT)
     const data = response.data.items
       .map((post: PostData) => post)
-      .filter((post: PostData) => post.state !== 'closed')
+      .filter((post: PostData) => !post.pull_request)
 
     setPostList(data)
   }, [])

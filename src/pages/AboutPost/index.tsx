@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Loading } from '../../components/Loading'
-import { REPOSITORY, USER } from '../../contexts/PostContext'
 import { api } from '../../lib/axios'
+import { VITE_ROPOSITORY, VITE_USER } from '../../utils/envConfig'
 import { DescriptionPost } from './DescriptionPost'
 import { HeaderAboutPost } from './HeaderAboutPost'
 import { AboutPostContainer } from './styles'
@@ -21,7 +21,7 @@ export function AboutPost() {
   const { number } = useParams()
 
   const fetchPost = useCallback(async () => {
-    const ENDPOIND = `repos/${USER}/${REPOSITORY}/issues/${number}`
+    const ENDPOIND = `repos/${VITE_USER}/${VITE_ROPOSITORY}/issues/${number}`
     const response = await api.get(ENDPOIND)
     setPost(response.data)
   }, [number])

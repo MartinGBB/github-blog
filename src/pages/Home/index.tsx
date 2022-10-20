@@ -2,7 +2,9 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import { Loading } from '../../components/Loading'
 import { PostContext } from '../../contexts/PostContext'
 import { api } from '../../lib/axios'
+import { VITE_USER } from '../../utils/envConfig'
 import { Post } from './Post'
+import { PostEmpty } from './PostsEmpty'
 import { Profile } from './Profile'
 import { SearchForm } from './SearchForm'
 import { HomeContainer, PostsContent } from './styles'
@@ -23,7 +25,7 @@ export function Home() {
   const [userData, setUserData] = useState<UserDataProfile>()
 
   const fetchUser = useCallback(async () => {
-    const response = await api.get('users/MartinGBB')
+    const response = await api.get(`users/${VITE_USER}`)
     setUserData(response.data)
   }, [])
 
@@ -39,9 +41,11 @@ export function Home() {
       <SearchForm />
 
       <PostsContent>
-        {postList.map((data) => (
-          <Post key={data.number} post={data} />
-        ))}
+        {!postList[0]?.title ? (
+          <PostEmpty />
+        ) : (
+          postList.map((data) => <Post key={data.number} post={data} />)
+        )}
       </PostsContent>
     </HomeContainer>
   )

@@ -6,7 +6,6 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
 import { PostState } from '..'
 import { formatDate } from '../../../lib/formatDate'
 import { HeaderPostContainer } from './styles'
@@ -19,10 +18,10 @@ export function HeaderAboutPost({ postHeader }: PostProps) {
   return (
     <HeaderPostContainer>
       <header>
-        <Link to="/">
+        <a href="/">
           <FontAwesomeIcon icon={faChevronLeft} />
           VOLTAR
-        </Link>
+        </a>
 
         <a href={postHeader.html_url}>
           VER NO GITHUB
