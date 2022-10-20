@@ -18,6 +18,7 @@ interface PostData {
   number: number
   comments: number
   url: string
+  pull_request: {}
 }
 
 interface PostContextType {
@@ -40,7 +41,7 @@ export function PostProvider({ children }: PostProviderProps) {
     const response = await api.get(ENDPOINT)
     const data = response.data.items
       .map((post: PostData) => post)
-      .filter((post: PostData) => post.state !== 'closed')
+      .filter((post: PostData) => !post.pull_request)
 
     setPostList(data)
   }, [])
