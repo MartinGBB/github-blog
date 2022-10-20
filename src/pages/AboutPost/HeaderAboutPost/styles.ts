@@ -10,14 +10,15 @@ export const HeaderPostContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
-    & a {
+    & a,
+    span {
       color: ${(props) => props.theme.blue};
       display: flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
       font-size: 0.75rem;
-
+      cursor: pointer;
       &:hover {
         box-shadow: 0 2px 0 ${(props) => props.theme.blue};
       }

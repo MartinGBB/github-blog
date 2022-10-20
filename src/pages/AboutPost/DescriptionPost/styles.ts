@@ -11,7 +11,7 @@ export const DescriptionPostContainer = styled.div`
 
   p {
     font-size: 1rem;
-    margin: 1rem;
+    margin: 1rem 0;
   }
 
   img {
