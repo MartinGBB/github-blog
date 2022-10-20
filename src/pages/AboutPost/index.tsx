@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Loading } from '../../components/Loading'
 import { REPOSITORY, USER } from '../../contexts/PostContext'
 import { api } from '../../lib/axios'
 import { DescriptionPost } from './DescriptionPost'
@@ -29,7 +30,7 @@ export function AboutPost() {
     fetchPost()
   }, [fetchPost])
 
-  if (!post.title) return <h1>loading</h1>
+  if (!post.title) return <Loading />
 
   return (
     <AboutPostContainer>

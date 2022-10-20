@@ -16,8 +16,6 @@ interface PostProps {
 }
 
 export function HeaderAboutPost({ postHeader }: PostProps) {
-  if (!postHeader.user) return <h1>loading</h1>
-
   return (
     <HeaderPostContainer>
       <header>
