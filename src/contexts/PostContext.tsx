@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { api } from '../lib/axios'
 
 interface PostData {
@@ -29,21 +35,20 @@ export const REPOSITORY = 'github-blog'
 export function PostProvider({ children }: PostProviderProps) {
   const [postList, setPostList] = useState<PostData[]>([])
 
-  async function fetchPost(query?: string) {
+  const fetchPost = useCallback(async (query?: string) => {
     const newQuery = query || '%20'
-    const ENDPOINT = `search/issues?q=repo:${USER}/${REPOSITORY}${newQuery}`
-
+    const ENDPOINT = `search/issues?q=${newQuery}%20repo:${USER}/${REPOSITORY}`
     const response = await api.get(ENDPOINT)
     const data = response.data.items
       .map((post: PostData) => post)
       .filter((post: PostData) => post.state !== 'closed')
 
     setPostList(data)
-  }
+  }, [])
 
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [fetchPost])
 
   return (
     <PostContext.Provider value={{ postList, fetchPost }}>

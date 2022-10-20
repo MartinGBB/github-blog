@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { Loading } from '../../components/Loading'
 import { PostContext } from '../../contexts/PostContext'
 import { api } from '../../lib/axios'
@@ -22,16 +22,16 @@ export function Home() {
 
   const [userData, setUserData] = useState<UserDataProfile>()
 
-  async function fetchUser() {
+  const fetchUser = useCallback(async () => {
     const response = await api.get('users/MartinGBB')
     setUserData(response.data)
-  }
+  }, [])
 
   useEffect(() => {
     fetchUser()
-  }, [])
+  }, [fetchUser])
 
-  if (!userData?.avatar_url || !postList[0]?.title) return <Loading />
+  if (!userData?.avatar_url) return <Loading />
 
   return (
     <HomeContainer>
