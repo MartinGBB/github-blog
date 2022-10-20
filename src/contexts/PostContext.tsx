@@ -23,8 +23,8 @@ interface PostProviderProps {
 
 export const PostContext = createContext({} as PostContextType)
 
-const USER = 'MartinGBB'
-const REPOSITORY = 'github-blog'
+export const USER = 'MartinGBB'
+export const REPOSITORY = 'github-blog'
 
 export function PostProvider({ children }: PostProviderProps) {
   const [postList, setPostList] = useState<PostData[]>([])
@@ -32,7 +32,6 @@ export function PostProvider({ children }: PostProviderProps) {
   async function fetchPost(query?: string) {
     const newQuery = query || '%20'
     const ENDPOINT = `search/issues?q=repo:${USER}/${REPOSITORY}${newQuery}`
-    console.log(ENDPOINT)
 
     const response = await api.get(ENDPOINT)
     const data = response.data.items
