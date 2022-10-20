@@ -15,6 +15,9 @@ type SearchFormInputs = z.infer<typeof searchFormSchema>
 export function SearchForm() {
   const { register, handleSubmit } = useForm<SearchFormInputs>({
     resolver: zodResolver(searchFormSchema),
+    defaultValues: {
+      query: '',
+    },
   })
 
   const { postList, fetchPost } = useContext(PostContext)
