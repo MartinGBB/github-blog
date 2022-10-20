@@ -1,25 +1,34 @@
-import { PostContainer } from './styles'
+import { useNavigate } from 'react-router-dom'
+import remarkGfm from 'remark-gfm'
+import { formatDate } from '../../../lib/formatDate'
+import { ContentBody, PostContainer } from './styles'
 
 interface PostProps {
   post: {
     title: string
-    date: string
-    paragraph: string
-    id: number
+    created_at: string
+    body: string
+    number: number
   }
 }
 
 export function Post({ post }: PostProps) {
-  const { title, date, paragraph, id } = post
+  const navigate = useNavigate()
 
+  function handleClick() {
+    navigate(`/${number}`)
+  }
+
+  const { title, created_at: date, body, number } = post
   return (
-    <PostContainer to={`/${id}`}>
+    <PostContainer onClick={handleClick}>
       <header>
         <h1>{title}</h1>
-        <span>{date}</span>
+        <time title={formatDate(date).publishedDateFormatted} dateTime={date}>
+          {formatDate(date).publishedDateRelativeToNow}
+        </time>
       </header>
-
-      <p>{paragraph}</p>
+      <ContentBody remarkPlugins={[remarkGfm]}>{body}</ContentBody>
     </PostContainer>
   )
 }

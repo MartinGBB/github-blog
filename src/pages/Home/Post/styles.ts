@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
 
-export const PostContainer = styled(Link)`
+export const PostContainer = styled.div`
   max-height: 16.25rem;
   max-width: 26rem;
   border-radius: 10px;
@@ -9,6 +9,7 @@ export const PostContainer = styled(Link)`
   padding: 2rem;
   margin-bottom: 2rem;
   text-decoration: none;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 0 0 2px ${(props) => props.theme['base-label']};
@@ -30,20 +31,23 @@ export const PostContainer = styled(Link)`
       font-size: 1.125rem;
       color: ${(props) => props.theme['base-title']};
       overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
-    span {
+    time {
       white-space: nowrap;
       font-size: 0.875rem;
       color: ${(props) => props.theme['base-span']};
     }
   }
+`
 
-  > p {
-    color: ${(props) => props.theme['base-text']};
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+export const ContentBody = styled(ReactMarkdown)`
+  color: ${(props) => props.theme['base-text']};
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `

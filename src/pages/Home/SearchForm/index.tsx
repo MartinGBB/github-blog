@@ -1,25 +1,45 @@
-import { ChangeEvent, useState } from 'react'
+import { useContext } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+import { PostContext } from '../../../contexts/PostContext'
+
 import { FormContainer } from './styles'
 
-export function SearchForm() {
-  const [search, setSearch] = useState('')
+const searchFormSchema = z.object({
+  query: z.string(),
+})
 
-  function handleSearchPost(data: ChangeEvent<HTMLInputElement>) {
-    setSearch(data.target.value)
+type SearchFormInputs = z.infer<typeof searchFormSchema>
+
+export function SearchForm() {
+  const { register, handleSubmit } = useForm<SearchFormInputs>({
+    resolver: zodResolver(searchFormSchema),
+    defaultValues: {
+      query: '',
+    },
+  })
+
+  const { postList, fetchPost } = useContext(PostContext)
+
+  async function handleSearchPost(data: SearchFormInputs) {
+    await fetchPost(data.query)
   }
-  console.log(search)
+
+  const POST_QUANTITY = postList.length
 
   return (
-    <FormContainer>
+    <FormContainer onSubmit={handleSubmit(handleSearchPost)}>
       <header>
         <h2>Publicações</h2>
-        <span>6 publicaçoes</span>
+        <span>{`${POST_QUANTITY} publicações`}</span>
       </header>
 
       <input
+        autoComplete="off"
         type="text"
         placeholder="Buscar conteúdo"
-        onChange={handleSearchPost}
+        {...register('query')}
       />
     </FormContainer>
   )

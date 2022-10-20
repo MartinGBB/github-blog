@@ -1,56 +1,46 @@
+import { useCallback, useContext, useEffect, useState } from 'react'
+import { Loading } from '../../components/Loading'
+import { PostContext } from '../../contexts/PostContext'
+import { api } from '../../lib/axios'
 import { Post } from './Post'
 import { Profile } from './Profile'
 import { SearchForm } from './SearchForm'
 import { HomeContainer, PostsContent } from './styles'
 
+export interface UserDataProfile {
+  avatar_url: string
+  name: string
+  bio: string
+  html_url: string
+  login: string
+  company: string
+  followers: number
+}
+
 export function Home() {
-  const obj = [
-    {
-      id: 1,
-      title: 'JavaScript data types and data structures',
-      date: 'Há 1 dia',
-      paragraph:
-        'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.',
-    },
-    {
-      id: 2,
-      title: 'JavaScript data types and data structures',
-      date: 'Há 1 dia',
-      paragraph:
-        'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.',
-    },
-    {
-      id: 3,
-      title: 'JavaScript data types and data structures',
-      date: 'Há 1 dia',
-      paragraph:
-        'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.',
-    },
-    {
-      id: 4,
-      title: 'JavaScript data types and data structures',
-      date: 'Há 1 dia',
-      paragraph:
-        'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.',
-    },
-    {
-      id: 5,
-      title:
-        'JavaScript data types and data str uctu resaa aaaa aaaaaaa aaa aaaa aaaa aaaaaa aaa aaaaaaa',
-      date: 'Há 1 dia',
-      paragraph:
-        'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.',
-    },
-  ]
+  const { postList } = useContext(PostContext)
+
+  const [userData, setUserData] = useState<UserDataProfile>()
+
+  const fetchUser = useCallback(async () => {
+    const response = await api.get('users/MartinGBB')
+    setUserData(response.data)
+  }, [])
+
+  useEffect(() => {
+    fetchUser()
+  }, [fetchUser])
+
+  if (!userData?.avatar_url) return <Loading />
 
   return (
     <HomeContainer>
-      <Profile />
+      <Profile user={userData} />
       <SearchForm />
 
       <PostsContent>
-        {obj.map((data) => (
-          <Post key={data.id} post={data} />
+        {postList.map((data) => (
+          <Post key={data.number} post={data} />
         ))}
       </PostsContent>
     </HomeContainer>
