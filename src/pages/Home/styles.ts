@@ -10,5 +10,4 @@ export const PostsContent = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  cursor: pointer;
 `
