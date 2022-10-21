@@ -1,18 +1,22 @@
 # ![Github Blog](https://images2.imgbox.com/92/ab/dCuh8Upz_o.png)
+<h1 align="center">Github Blog</h1>
 
 ## Descrição do Projeto
 
-  Este projeto é um blog que consume informações da API de Github para preencher dados do perfil e post; os post serão as issues dentro de determinado repositorio.
-  Os estilos foram seguidos apartir de um templete de [Figma](https://www.figma.com/file/O1xxVJ9gUC3TV9oocO375L/GitHub-Blog-(Community)?node-id=0%3A1) fornecido pela Rocketseat.
+  Este projeto foi desenvolvido em ReactJS, ajuda na construção de blog pessoal. Consume informações da API de [Github](https://docs.github.com/pt/rest) para preencher dados do perfil e postagens; onde as postagens serão as issues dentro de determinado repositorio.
+  Os estilos foram inspirado de um templete de [Figma](https://www.figma.com/file/O1xxVJ9gUC3TV9oocO375L/GitHub-Blog-(Community)?node-id=0%3A1) da [Rocketseat](https://app.rocketseat.com.br/).
   
  Se sentir vontade de acessar ao Deploy do projeto, pode clicar :point_right: [aqui](https://coffee-delivery-khaki.vercel.app/) e será redireccionado.
   
 
-## Pre-Requisitos
+## Pre-requisitos para rodar na sua máquina
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+Antes de começar, você vai precisar ter instalado no seu computador as seguintes ferramentas:
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org/en/)
+
+Além disto é bom ter um editor para trabalhar com o código.
+* [VSCode](https://code.visualstudio.com/)
 
 ## Instalação
 
@@ -26,12 +30,12 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
     $ npm install
   ```
 
-Deve criar um arquivo env.local a raiz do projeto e passar as seguintes chaves com os dados do portafolio que você quer acessar:
+Deve criar o arquivo: `.env.local` na raiz do projeto e passar as seguintes chaves com os seguintesdados:
   ```bash
-    VITE_USER={usuario}
-    REPOSITORY={repositorio} 
+    VITE_USER={SeuUsuarioDeGithub}
+    REPOSITORY={SeuRepositorioComIssues} 
     
-    # não deve incluir as chaves
+    # Não deve incluir as chaves
   ```
 
 ## Execução
@@ -47,7 +51,7 @@ Deve criar um arquivo env.local a raiz do projeto e passar as seguintes chaves c
   * Podera acessar ao seu perfil de github se clicar em **GITHUB** no perfil.
   * Filtro de busca de post por titulo.
   * Ao clicar no Post sera redireccionado para ver o post inteiro
-    * Se clicar em **VER NO GITHUB** sera redireccionado para a issues no github
+    * Se clicar em **VER NO GITHUB** sera redireccionado para a issue no github
  
  
 ## Tecnologías
@@ -57,9 +61,11 @@ Deve criar um arquivo env.local a raiz do projeto e passar as seguintes chaves c
 ### Bibliotecas implementadas
   - [Axios](https://axios-http.com/ptbr/docs/api_intro)
   - [Styles-Components](https://styled-components.com/)
+  - [React-Router-Dom](https://reactrouter.com/en/main)
+  - [ESlint](https://eslint.org/)
   - [React-Hook-Form](https://react-hook-form.com/get-started/)
-  - [zod](https://zod.dev/?id=basic-usage)
-  - [react-loading](https://github.com/fakiolinho/react-loading)
+  - [Zod](https://zod.dev/?id=basic-usage)
+  - [React-loading](https://github.com/fakiolinho/react-loading)
   - [Fontawesome](https://fontawesome.com/v5/docs/web/use-with/react)
 
   
